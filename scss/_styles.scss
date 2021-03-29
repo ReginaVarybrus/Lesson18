@@ -52,6 +52,35 @@ body {
   height: 99px;
   .navbar-brand {
     color: $white;
+    &:hover {
+      color: $white;
+    }
+  }
+  .navbar-nav {
+    margin-bottom: 5px;
+    .nav-item {
+      margin-right: 26px;
+      z-index: 9;
+      &:last-child {
+        margin-right: 0;
+      }
+      @include media-breakpoint-up(md) {
+        background: $gabelGreen;
+        display: flex;
+        justify-content: center;
+        &:last-child {
+          margin-right: 26px;
+        }
+      }
+      @include media-breakpoint-up(sm) {
+        background: $gabelGreen;
+        display: flex;
+        justify-content: center;
+        &:last-child {
+          margin-right: 26px;
+        }
+      }
+    }
   }
   li {
     span {
@@ -60,8 +89,14 @@ body {
       width: 5px;
       margin-bottom: 3px;
       margin-right: 22px;
-      margin-left: 10px;
       background: $Turbo;
+
+      /* @include media-breakpoint-up(md) {
+        display: none;
+      }
+      @include media-breakpoint-up(sm) {
+        display: none;
+      }*/
     }
   }
 }
@@ -79,7 +114,7 @@ body {
     align-items: center;
     text-align: center;
     &:hover {
-      text-decoration: none;
+      color: $white;
     }
     span {
       padding-left: 5px;
@@ -95,13 +130,13 @@ body {
 .intro {
   height: 100vh;
   width: 100%;
-  .intro-up,
-  .intro-down {
-    background: $Firefly;
-    min-height: 290px;
-  }
+  background: $Firefly;
+  display: flex;
+  align-items: center;
+  position: relative;
   .intro-middle {
     background: $gabelGreen;
+    width: 100%;
     min-height: 370px;
     h1 {
       color: $white;
@@ -115,30 +150,52 @@ body {
       font-weight: $font-weight-base;
       border-radius: 0;
       height: 58px;
-      margin-bottom: 64px;
       width: 227px;
     }
   }
-  .intro-down {
-    position: relative;
-    a {
+  a {
+    position: absolute;
+    height: 59px;
+    width: 59px;
+    bottom: 0;
+    left: calc(50% - 29.5px);
+    background: $yellowBtn;
+    text-decoration: none;
+    span {
       position: absolute;
-      height: 59px;
-      width: 59px;
-      bottom: 0;
-      left: calc(50% - 29.5px);
-      background: $yellowBtn;
-      text-decoration: none;
-      span {
-        position: absolute;
-        top: calc(50% - 6px);
-        left: calc(50% - 7px);
-        .icon-arrows:before {
-          content: "\e900";
-          color: $white;
-          font-size: 1.125rem;
-        }
+      top: calc(50% - 6px);
+      left: calc(50% - 7px);
+      .icon-arrows:before {
+        content: "\e900";
+        color: $white;
+        font-size: 1.125rem;
       }
     }
+  }
+}
+.main-content {
+  h3 {
+    padding-top: 59px;
+    padding-bottom: 9px;
+    text-align: center;
+  }
+  h2 {
+    font-weight: $font-weight-base;
+    text-align: center;
+    padding-bottom: 20px;
+    //border-bottom: 3px solid $Turbo;
+  }
+  p {
+    padding-top: 11px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: $font-weight-light;
+    line-height: 1.5625rem;
+  }
+  span {
+    background: $Turbo;
+    color: $Turbo;
+    height: 3px;
+    width: 100%;
   }
 }
