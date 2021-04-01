@@ -125,12 +125,13 @@ body {
   }
 }
 .intro {
-  height: 100vh;
+  height: calc(100vh - 122px);
   width: 100%;
   background: $Firefly;
   display: flex;
   align-items: center;
   position: relative;
+  min-height: 520px;
   .intro-middle {
     background: $gabelGreen;
     width: 100%;
@@ -207,5 +208,26 @@ body {
     color: $Turbo;
     height: 3px;
     width: 100%;
+  }
+}
+.service-item {
+  background: yellow;
+}
+.service {
+  width: 108px;
+  height: 108px;
+  display: flex;
+  border-radius: 50%;
+  background: rgb(214, 107, 107);
+  border: 1px solid transparent;
+  svg {
+    fill: white;
+  }
+  &:hover {
+    border: 1px solid #000;
+    background: #fff;
+    svg {
+      fill: yellow;
+    }
   }
 }
